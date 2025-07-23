@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Official
-dnf5 -y install @cosmic-desktop-environment
+dnf5 -y install @cosmic-desktop
 
 # COPR
 # dnf5 -y copr enable ryanabx/cosmic-epoch
