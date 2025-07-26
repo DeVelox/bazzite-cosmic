@@ -13,3 +13,8 @@ dnf5 -y copr disable ryanabx/cosmic-epoch
 # systemctl disable sddm.service
 systemctl disable gdm.service
 systemctl enable cosmic-greeter.service
+
+# Cleanup
+dnf5 clean all
+rm -rf /tmp/* || true
+
