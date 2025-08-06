@@ -2,11 +2,11 @@
 FROM scratch AS ctx
 COPY build_files /
 
-ARG BASE_IMAGE="ghcr.io/ublue-os/${BASE_IMAGE}:stable"
+ARG BASE_IMAGE_URI="ghcr.io/ublue-os/${BASE_IMAGE}:stable"
 ARG EXTRA_APPS="${EXTRA_APPS}"
 
 # Base Image
-FROM ${BASE_IMAGE}
+FROM ${BASE_IMAGE_URI}
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
