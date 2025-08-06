@@ -1,9 +1,9 @@
+ARG BASE_IMAGE_URI="ghcr.io/ublue-os/${BASE_IMAGE}:stable"
+ARG EXTRA_APPS="${EXTRA_APPS}"
+
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-
-ARG BASE_IMAGE_URI="ghcr.io/ublue-os/${BASE_IMAGE}:stable"
-ARG EXTRA_APPS="${EXTRA_APPS}"
 
 # Base Image
 FROM ${BASE_IMAGE_URI}
