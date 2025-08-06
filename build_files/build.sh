@@ -2,6 +2,10 @@
 
 set -ouex pipefail
 
+if [ -n "$EXTRA_APPS" ]; then
+    dnf5 -y install "$EXTRA_APPS"
+fi
+
 # Tagged
 # dnf5 -y install @cosmic-desktop
 
