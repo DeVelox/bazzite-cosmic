@@ -2,10 +2,6 @@
 
 set -ouex pipefail
 
-if [ -n "$EXTRA_APPS" ]; then
-    dnf5 -y install "$EXTRA_APPS"
-fi
-
 # Tagged
 # dnf5 -y install @cosmic-desktop
 
@@ -27,6 +23,11 @@ dnf5 -y install gamescope-session-plus gamescope-session-steam
 dnf5 -y copr disable bazzite-org/bazzite
 
 sed -i 's/export CLIENTCMD="steam -gamepadui -steamos3 -steampal -steamdeck"/export CLIENTCMD="steam -gamepadui -steamos3"/' /usr/share/gamescope-session-plus/sessions.d/steam
+
+# Extra apps
+if [ -n "$EXTRA_APPS" ]; then
+    dnf5 -y install "$EXTRA_APPS"
+fi
 
 # Cleanup
 dnf5 clean all
