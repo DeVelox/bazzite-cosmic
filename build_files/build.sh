@@ -14,8 +14,11 @@ dnf5 -y copr enable ryanabx/cosmic-epoch
 dnf5 -y install cosmic-desktop --setopt=install_weak_deps=True
 dnf5 -y copr disable ryanabx/cosmic-epoch
 
-# systemctl disable sddm.service
-systemctl disable gdm.service
+if [[ "$BASE_IMAGE" =~ "gnome" ]]; then
+    systemctl disable gdm.service
+else
+    systemctl disable sddm.service
+fi
 systemctl enable cosmic-greeter.service
 
 # Gamescope session
