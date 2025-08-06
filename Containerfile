@@ -20,7 +20,7 @@ FROM ghcr.io/ublue-os/${BASE_IMAGE}:stable
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-ARG EXTRA_ARGS
+ARG EXTRA_APPS
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
