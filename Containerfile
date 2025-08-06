@@ -1,12 +1,11 @@
-ARG BASE_IMAGE_URI="ghcr.io/ublue-os/${BASE_IMAGE}:stable"
-ARG EXTRA_APPS="${EXTRA_APPS}"
+ARG BASE_IMAGE
 
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ${BASE_IMAGE_URI}
+FROM ghcr.io/ublue-os/${BASE_IMAGE}:stable
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
@@ -20,6 +19,8 @@ FROM ${BASE_IMAGE_URI}
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
+
+ARG EXTRA_ARGS
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
