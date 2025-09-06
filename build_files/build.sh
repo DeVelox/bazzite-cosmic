@@ -26,7 +26,7 @@ sed -i 's/export CLIENTCMD="steam -gamepadui -steamos3 -steampal -steamdeck"/exp
 
 # Extra apps
 if [ -n "$EXTRA_APPS" ]; then
-    dnf5 -y install "$EXTRA_APPS"
+    dnf5 -y install $EXTRA_APPS
 fi
 
 # Cleanup
