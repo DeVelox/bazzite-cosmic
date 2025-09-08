@@ -42,7 +42,7 @@ jobs:
             - variant: develox
               image_name: bazzite-cosmic
               base_image: bazzite-gnome-nvidia-open
-              extra_apps: alacritty egl-wayland
+              extra_apps: alacritty
             - variant: nessie
               image_name: bazzite-kosmik
               base_image: bazzite-nvidia
