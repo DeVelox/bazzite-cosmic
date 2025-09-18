@@ -22,7 +22,7 @@ dnf5 -y copr enable bazzite-org/bazzite
 dnf5 -y install gamescope-session-plus gamescope-session-steam
 dnf5 -y copr disable bazzite-org/bazzite
 
-sed -i 's/export CLIENTCMD="steam -gamepadui -steamos3 -steampal -steamdeck"/export CLIENTCMD="steam -gamepadui -steamos3"/' /usr/share/gamescope-session-plus/sessions.d/steam
+sed -i 's/ -steampal -steamdeck//' /usr/share/gamescope-session-plus/sessions.d/steam
 
 # Extra apps
 if [ -n "$EXTRA_APPS" ]; then
