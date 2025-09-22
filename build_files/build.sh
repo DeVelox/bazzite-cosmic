@@ -26,7 +26,7 @@ sed -i 's/ -steampal -steamdeck//' /usr/share/gamescope-session-plus/sessions.d/
 
 # Extra apps
 if [ -n "$EXTRA_APPS" ]; then
-    dnf5 -y install $EXTRA_APPS
+    dnf5 -y install $EXTRA_APPS --setopt=disable_excludes=*
 fi
 
 # Cleanup
